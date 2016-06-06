@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<scene name="test">
+  <keyframe t="0" command="spawn" name="silk" spritesheet="silk" fx="410+t*300/2000" fy="400-t*200/2000" z="0"/>
+  <keyframe t="2000" command="position" name="silk" x="700" y="150"/>
+  <keyframe t="1980" command="state" name="silk" state="MeltDownR"/>
+  <keyframe t="3000" command="position" name="silk" y="435"/>
+  <keyframe t="4000" command="position" name="silk" fx="700-100*t/1000" y="620" z="0"/>
+  <keyframe t="4000" command="state" name="silk" state="RunL"/>
+  <keyframe t="8000" command="destroy" name="silk"/>
+</scene>
+
+<!--
+    A scene have a name, and is comprised of keyframes:
+    
+        Each keyframe has a time at which the action will happen. There are several actions:
+            
+            -Spawn: Spawns a new item with the specified name, which is an instance of the specified spritesheet. You have to specify a position.
+            
+            -Position: Moves the item wth the specified name to the specified position.
+            
+            -State: Sets the item with the specified name to the specified state.
+            
+            -Destroy: Deletes the item with the specified name.
+            
+         To specify a position you can either use the x,y,z values, which will expect a double, or fx,fy,fz, which will expect a function that will return the coordinate when evaluate. This last option allows you to take the current time (t) into account.
+-->
